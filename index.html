@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TripAdvisor</title>
+    <!-- fontAwesome -->
+    <script src="https://kit.fontawesome.com/bb54014cd5.js"></script>
+    <!-- fichiers css -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/img/Tripadvisor_logoset_solid_green.svg"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="left">
+          <!-- logo -->
+          <div class="logo">
+            <img src="./assets/img/logoTrip.svg" alt="icone TripAdvisor" />
+          </div>
+          <!-- search -->
+          <div class="search">
+            <form action="#">
+              <button type="submit"><i class="fa fa-search"></i></button>
+              <input type="text" name="search" />
+            </form>
+          </div>
+        </div>
+        <div class="right">
+          <div class="link">
+            <!-- publish -->
+            <div class="publish">
+              <button>
+                <svg viewBox="0 0 24 24" class="i">
+                  <path
+                    d="M12 2C6.478 2 2 6.478 2 11.999 2 17.522 6.478 22 12 22s10-4.478 10-10.001C22 6.478 17.522 2 12 2zm0 17.999c-4.411 0-8-3.589-8-8 0-4.41 3.589-8 8-8s8 3.59 8 8c0 4.411-3.589 8-8 8z"
+                  ></path>
+                  <path
+                    d="M13 7.336h-2v3.501H7.5v1.999H11v3.5h2v-3.5h3.501v-1.999H13z"
+                  ></path></svg
+                ><a href="#">Publier</a>
+              </button>
+            </div>
+            <!-- alertes -->
+            <div class="alertes">
+              <button>
+                <i class="far fa-bell"></i><a href="#">Alertes</a>
+              </button>
+            </div>
+            <!-- voyages -->
+            <div class="voyages">
+              <button>
+                <i class="far fa-heart"></i><a href="#">Voyages</a>
+              </button>
+            </div>
+          </div>
+          <!-- connexion -->
+          <button class="connexion"><a href="#">Connectez-vous</a></button>
+        </div>
+      </header>
+    </div>
+    <div class="coucou"></div>
+    <div class="container">
+      <main>
+        <!-- Explorez Paris ! -->
+        <div class="title">Explorez <span>La Rochelle</span></div>
+        <!-- NAV -->
+        <div class="nav">
+          <div class="borderLink">
+            <a href="#">
+              <span class="d-flex justBetween">
+                <span class="styleNav">Conseils de voyage</span>
+                <span class="svg"
+                  ><svg viewBox="0 0 24 24">
+                    <path
+                      d="M21.523 6.006h-8.039v-2h-9V3a1 1 0 10-2 0l-.008 19h2v-4.979h7.009v2.001h10.039l-2.949-6.509 2.948-6.507zm-10.039 9.015H4.476V6.005h7.008v9.016zm6.938 2h-4.938V8.006h4.938l-2.043 4.508 2.043 4.507z"
+                    ></path></svg
+                ></span>
+              </span>
+            </a>
+          </div>
+          <div class="borderLink">
+            <a href="#">
+              <span class="d-flex justBetween">
+                <span class="styleNav">Hôtels</span>
+                <span class="svg"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    class="_2HBN-k68 _2JndpOur"
+                  >
+                    <path
+                      d="M20.587 12.139V4.144H3.424v7.986A3.805 3.805 0 002 15.097v4.755h1.906v-1.905h16.188v1.91H22v-4.76a3.804 3.804 0 00-1.413-2.958zm-1.906-6.09V8.83a5.048 5.048 0 00-2.865-.876c-1.565 0-2.952.69-3.816 1.749-.864-1.059-2.252-1.749-3.818-1.749-1.07 0-2.056.324-2.851.866V6.049h13.35zm-.258 5.248c-.077-.005-.155-.012-.234-.012h-4.971c.438-.838 1.437-1.426 2.598-1.426 1.168 0 2.173.593 2.607 1.438zm-7.643-.012H5.812c-.081 0-.159.007-.238.012.434-.844 1.438-1.438 2.606-1.438 1.163 0 2.163.588 2.6 1.426zM3.906 16.04v-.943c0-1.051.855-1.905 1.906-1.905h12.376c1.051 0 1.905.854 1.905 1.905v.943H3.906z"
+                    ></path></svg
+                ></span>
+              </span>
+            </a>
+          </div>
+          <div class="borderLink">
+            <a href="#">
+              <span class="d-flex justBetween">
+                <span class="styleNav">Locations de vacances</span>
+                <span class="svg"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    class="_2HBN-k68 _2JndpOur"
+                  >
+                    <path
+                      d="M12.001 2L2.097 8.6V22h19.807V8.6L12.001 2zm7.922 18.021H4.077V9.66l7.924-5.28 7.922 5.28v10.361z"
+                    ></path>
+                    <path
+                      d="M9.036 10.627a2.973 2.973 0 00-2.97 2.968 2.974 2.974 0 002.97 2.971 2.964 2.964 0 002.788-1.98h2.152v1.979h1.98v-1.979h1.982v-1.979h-6.115a2.965 2.965 0 00-2.787-1.98zm0 3.959a.99.99 0 11-.002-1.978.99.99 0 01.002 1.978z"
+                    ></path></svg
+                ></span>
+              </span>
+            </a>
+          </div>
+          <div class="borderLink">
+            <a href="#">
+              <span class="d-flex justBetween">
+                <span class="styleNav">Activités</span>
+                <span class="svg"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    class="_2HBN-k68 _2JndpOur"
+                  >
+                    <circle cx="14.001" cy="8.502" r="1"></circle>
+                    <circle cx="14.001" cy="11.989" r="1"></circle>
+                    <circle cx="14.001" cy="15.497" r="1"></circle>
+                    <path
+                      d="M20 6.509v1.467a4.505 4.505 0 00-2.499 4.029A4.508 4.508 0 0020 16.033v1.457H4v-1.457a4.506 4.506 0 002.497-4.028A4.505 4.505 0 004 7.976V6.509h16m2-2H2v4.997a2.498 2.498 0 010 4.998v4.986h20v-4.986c-1.381 0-2.498-1.119-2.498-2.499S20.619 9.506 22 9.506V4.509z"
+                    ></path></svg
+                ></span>
+              </span>
+            </a>
+          </div>
+          <div class="borderLink">
+            <a href="#">
+              <span class="d-flex justBetween">
+                <span class="styleNav">Restaurants</span>
+                <span class="svg"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    class="_2HBN-k68 _2JndpOur"
+                  >
+                    <path
+                      d="M18.753 21.459l-5.502-5.504-2.85 2.851-1.663-1.662-4.315 4.315-1.343-1.344 4.316-4.316-4.004-4.003A4.718 4.718 0 012 8.438c0-1.269.494-2.461 1.392-3.358l.834-.835 7.362 7.362.866-.866c-1.099-1.719-.777-3.972.912-5.661l2.538-2.538 1.343 1.344-2.538 2.537c-.785.787-1.254 1.903-.852 2.916l4.423-4.422 1.343 1.344-4.429 4.428c.31.13.64.188.977.164.646-.043 1.299-.364 1.838-.904a630.937 630.937 0 002.642-2.653L22 8.631s-1.241 1.255-2.647 2.66c-.865.865-1.951 1.383-3.057 1.456a4.027 4.027 0 01-2.501-.66l-.864.862 7.166 7.166-1.344 1.344zM4.291 6.995A2.835 2.835 0 003.9 8.438c0 .762.296 1.478.835 2.015l5.666 5.667 1.506-1.507-7.616-7.618z"
+                    ></path></svg
+                ></span>
+              </span>
+            </a>
+          </div>
+          <div class="borderLink">
+            <a href="#">
+              <span class="d-flex justBetween">
+                <span class="styleNav">Forums de voyage</span>
+                <span class="svg"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    class="_2HBN-k68 _2JndpOur"
+                  >
+                    <path
+                      d="M2 21.257h2.118l3.271-3h10.604l.02-11.513H2v14.513zM4 8.744h12.009l-.013 7.512H6.61L4 18.65V8.744z"
+                    ></path>
+                    <path d="M7.004 2.743v2h12.995v8.512H22V2.743z"></path></svg
+                ></span>
+              </span>
+            </a>
+          </div>
+          <div class="borderLink">
+            <a href="#">
+            <span class="d-flex justBetween">
+              <span class="styleNav">Plus</span>
+              <span class="svg"
+                ><svg
+                  x="0"
+                  y="0"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  height="1em"
+                  class="_2HBN-k68 _2JndpOur"
+                >
+                  <circle cx="4.5" cy="11.9" r="2.5"></circle>
+                  <circle cx="19.5" cy="11.9" r="2.5"></circle>
+                  <circle cx="12" cy="11.9" r="2.5"></circle></svg
+              ></span>
+            </span>
+          </div></a>
+        </div>
+        <div class="menu">
+
+        </div>
+        <!-- pictures -->
+        <div class="pictures">
+          <div class="box1">
+            <img src="/assets/img/caption5.jpg" alt="" />
+          </div>
+          <div class="box2">
+            <div class="pict2">
+              <img src="/assets/img/caption1.jpg" alt="" />
+            </div>
+            <div class="pict3">
+              <img src="/assets/img/caption4.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- sections -->
+        <section class="d-flex section">
+          <div class="section1">
+            <h2>Informations sur La Rochelle</h2>
+            <p>
+              Située dans le Golfe de Gascogne, La Rochelle est riche d'un passé
+              étroitement lié à la mer et possède aujourd'hui un grand port de
+              plaisance. Son vieux port pittoresque constitue d'ailleurs le cœur
+              de la ville. La ville héberge un patrimoine architectural
+              impressionnant, ainsi qu'un aquarium, de magnifiques jardins et un
+              musée d'histoire naturelle. Réservez vos vacances d'été en avance
+              : le festival des Francofolies qui se tient à la mi-juillet attire
+              un public très nombreux.
+            </p>
+          </div>
+          <div class="section2">
+            <div class="rose">
+              <h2>La Rochelle: commencez à organiser !</h2>
+              <p>
+                Créez un voyage pour enregistrer et organiser toutes vos idées
+                et les visualiser sur une carte.
+              </p>
+              <button>
+                <a href="#"> Créez un voyage </a>
+              </button>
+            </div>
+            <div class="card">
+              <img src="/assets/img/card.png" alt="" />
+            </div>
+          </div>
+        </section>
+        <!-- Sous section IMMANQUABLE -->
+        <div class="layout">
+          <h2><span> Immanquable à la Rochelle </span></h2>
+        </div>
+        <div class="immanquable">
+          <div class="divertir">
+            <h3>Se divertir</h3>
+            <p s>
+              Des lieux à voir, des rues à explorer et des expériences
+              emblématiques.
+            </p>
+          </div>
+          <div class="carroussel">
+            <div class="card1">
+              <img src="/assets/img/carroussel/vieux-port.jpg" alt="" />
+            </div>
+            <div class="card1">
+              <img src="/assets/img/carroussel/tortue.jpg" alt="" />
+            </div>
+            <div class="card1">
+              <img src="/assets/img/carroussel/tours.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
