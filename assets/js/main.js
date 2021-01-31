@@ -25,7 +25,7 @@ $.addEventListener("DOMContentLoaded", () => {
     };
     //réponse du serveur
     const response = await axios.post(
-      "https://tripadvisor-with-mailgun-amande.netlify.app/",
+      "https://formulaire-backend-tripadvisor.herokuapp.com/",
       data
     );
     console.log(response);
