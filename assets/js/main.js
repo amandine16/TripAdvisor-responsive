@@ -24,7 +24,10 @@ $.addEventListener("DOMContentLoaded", () => {
       message: $.querySelector("#message").value,
     };
     //réponse du serveur
-    const response = await axios.post("http://localhost:3000/form", data);
+    const response = await axios.post(
+      "https://git.heroku.com/tripadvisor-server-mailgun.git",
+      data
+    );
     console.log(response);
     if (response.status === 200) {
       alert("formulaire soumis");
