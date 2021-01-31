@@ -25,7 +25,7 @@ $.addEventListener("DOMContentLoaded", () => {
     };
     //réponse du serveur
     const response = await axios.post(
-      "https://git.heroku.com/tripadvisor-server-mailgun.git",
+      "https://tripadvisor-server-mailgun.herokuapp.com/",
       data
     );
     console.log(response);
