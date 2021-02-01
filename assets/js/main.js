@@ -9,6 +9,15 @@ $.addEventListener("DOMContentLoaded", () => {
   $.querySelector(".close").addEventListener("click", () => {
     $.querySelector("#modal").classList.remove("display");
   });
+  $.querySelector(".navigation").addEventListener("scroll", (e) => {
+    let x = $.querySelector(".navigation").scrollLeft;
+    console.log(x);
+    if (x > 20) {
+      $.querySelector(".btnCarLeft").classList.add("displayBtnCar");
+    } else {
+      $.querySelector(".btnCarLeft").classList.remove("displayBtnCar");
+    }
+  });
 
   //Ecoute de la soumission du formulaire d'envoie d'emails
   $.querySelector("#formEmail").addEventListener("submit", async (event) => {

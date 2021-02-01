@@ -7,7 +7,10 @@
   --noirClair: #535353;
   --green: #00aa6c;
   --grisClair: #e0e0e0;
+  --scrimPrimaryBackgroundEnd: hsla(0, 0%, 100%, 0);
+  --scrimPrimaryBackgroundStart: #fff;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,9 +23,10 @@
   justify-content: space-between;
 }
 h1 {
-  font-size: 5vw;
+  font-size: 3.5vw;
   line-height: 30px;
   font-weight: bold;
+  color: var(--pink);
 }
 h2 {
   line-height: 38px;
@@ -44,6 +48,9 @@ h4 {
 .display {
   display: flex;
 }
+.displayBtnCar {
+  display: flex;
+}
 .margin80 {
   margin: 80px 0;
 }
@@ -63,14 +70,16 @@ body {
 /* HEADER */
 header {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding-top: 10px;
+  margin-bottom: 30px;
 }
 /* left */
 .left {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
+  width: 50%;
 }
 
 .left img {
@@ -80,9 +89,10 @@ header {
 .search {
   border: 1px solid var(--greyJaune);
   border-radius: 5px;
-  max-width: 350px;
+  /* max-width: 350px; */
   height: 40px;
   /* line-height: 40px; */
+  width: 100%;
 }
 .search input {
   border: none;
@@ -102,8 +112,11 @@ header {
 /* right */
 .right {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  /* float: revert; */
+  float: right;
+  width: 50%;
 }
 .link {
   display: flex;
@@ -168,12 +181,6 @@ main {
   margin-top: 50px;
 }
 /* title Explorez Paris ! */
-h1 {
-  color: var(--pink);
-  font-size: 54px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
 h1 span {
   color: var(--black);
 }
@@ -181,7 +188,9 @@ h1 span {
 .navigation {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 35px;
+  margin: 35px auto 35px auto;
+  max-width: 1280px;
+  padding: 0 20px;
 }
 .navigation .hidden-xl {
   display: none;
@@ -214,6 +223,16 @@ h1 span {
 .navigation div:hover svg {
   fill: white;
 }
+
+/* navigation button */
+
+/* .btnCarLeft {
+  display: none;
+} */
+.btnCarRight {
+  display: none;
+}
+
 /* line links */
 .links {
   height: 50px;
@@ -298,26 +317,31 @@ h1 span {
   margin-top: 25px;
 }
 .description .col-2 {
-  width: calc(50% - 120px);
+  width: calc(58% - 120px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-left: 120px;
 }
-.description > div.col-2 > div:nth-child(1) {
+.description .col-2 > div:first-child {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.description .col-2 p {
-  margin-bottom: 10px 0 20px 0;
-}
-
-.description .col-2 div:first-child {
   background: var(--pink);
   border-radius: 20px 20px 0 0;
   padding: 20px;
   height: 234px;
+}
+.description .col-2 > div:last-child {
+  background: url(../img/card.png) no-repeat center;
+  background-size: cover;
+  height: 190px;
+  border-radius: 0 0 20px 20px;
+}
+.description .col-2 p,
+.description .col2 h3,
+.description .col2 button {
+  padding: 5px 0;
 }
 
 .description button {
@@ -338,12 +362,7 @@ h1 span {
   text-decoration: none;
   text-transform: none;
 }
-.description .col-2 div:last-child {
-  background: url(../img/card.png) no-repeat center;
-  background-size: cover;
-  height: 190px;
-  border-radius: 0 0 20px 20px;
-}
+
 /* IMMANQUABLE + CONSEILS DE VOYAGE */
 .layout {
   text-align: center;
@@ -417,7 +436,7 @@ h1 span {
 .carroussel {
   display: flex;
   /* position: relative; */
-  width: calc(100% / 4 * 3);
+  /* width: calc(100% / 4 * 3); */
   overflow: hidden;
   overflow-x: scroll;
   scroll-behavior: smooth;
@@ -683,6 +702,7 @@ footer .col-2 i {
 @media (max-width: 1328px) {
   .navigation {
     flex-wrap: wrap;
+    /* position: relative; */
   }
   .navigation .hidden-xl {
     display: inherit;
@@ -691,7 +711,6 @@ footer .col-2 i {
     width: calc(100% / 4 - (8px));
     flex: none;
     padding: 15px;
-    background: blue;
     margin: 10px 0;
   }
   .navigation div:nth-child(4) {
@@ -710,6 +729,9 @@ footer .col-2 i {
   .link button a {
     display: none;
   }
+  .links {
+    margin: 10px 0;
+  }
   .pictures {
     height: 280px;
   }
@@ -719,6 +741,7 @@ footer .col-2 i {
   /* description */
   .description {
     flex-direction: column;
+    margin-top: 10px;
   }
   .description .col-1 {
     width: 100%;
@@ -731,14 +754,40 @@ footer .col-2 i {
     flex-direction: row;
   }
   .description .col-2 > div:last-child {
-    height: 280px;
+    height: 100%;
     width: 50%;
     border-radius: 0 20px 20px 0;
   }
   .description .col-2 > div:first-child {
-    height: 280px;
+    height: 100%;
     width: 50%;
     border-radius: 20px 0 0 20px;
+  }
+  .navigation {
+    margin: 10px auto 10px auto;
+  }
+  /* section conseils */
+  .section-conseil > div {
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  .section-conseil > div > div {
+    flex: none;
+    width: calc(100% / 2 - (8px));
+    margin: 10px 0;
+  }
+  .section-conseil > div > div:not(:last-child) {
+    margin-right: 0px;
+  }
+  /* section immanquable */
+  .immanquable {
+    display: flex;
+  }
+  .carroussel .card {
+    width: calc(100% / 2.5 - (40px / 2));
+  }
+  .carroussel {
+    width: calc(100% / 2.5 * 3);
   }
 }
 
@@ -758,6 +807,20 @@ footer .col-2 i {
   }
   .block-xs {
     display: block;
+  }
+  .navigation {
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+  }
+  .navigation div:not(:last-child) {
+    margin-right: 20px;
+  }
+  .navigation div {
+    width: calc(100% / 3 - (8px));
+    flex: none;
+    padding: 15px;
+    margin: 10px 0;
   }
 
   /* pictures */
@@ -782,6 +845,77 @@ footer .col-2 i {
   .description .col-2 {
     margin-left: 0;
     width: 100%;
+    flex-direction: column;
+    max-height: 425px;
+  }
+
+  .description .col-2 > div:first-child {
+    width: 100%;
+    height: 65%;
+  }
+  .description .col-2 > div:last-child {
+    width: 100%;
+    height: 35%;
+  }
+
+  /* navigation carroussel */
+  .gestionBtnNav {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .navigation::-webkit-scrollbar {
+    display: none;
+  }
+  .navigation {
+    max-width: 100%;
+    margin: 10px auto;
+  }
+  .btnCarRight {
+    display: flex;
+    position: absolute;
+    top: 0%;
+    font-size: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 153px;
+    height: 100%;
+    background: linear-gradient(
+      273deg,
+      var(--scrimPrimaryBackgroundStart) 16px,
+      var(--scrimPrimaryBackgroundEnd)
+    );
+    right: 0;
+    /* display: flex; */
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+  }
+  .btnCarLeft {
+    /* display: flex; */
+    position: absolute;
+    top: 0%;
+    font-size: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 153px;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      var(--scrimPrimaryBackgroundStart) 16px,
+      var(--scrimPrimaryBackgroundEnd)
+    );
+
+    left: 0;
+    /* display: flex; */
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 30px;
   }
 }
 
