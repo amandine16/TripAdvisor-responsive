@@ -436,11 +436,12 @@ h1 span {
 .carroussel {
   display: flex;
   /* position: relative; */
-  /* width: calc(100% / 4 * 3); */
+  width: calc(100% / 3 + (60px / 3));
   overflow: hidden;
   overflow-x: scroll;
   scroll-behavior: smooth;
   height: 100%;
+  width: 80%;
 }
 .carroussel::-webkit-scrollbar {
   display: none;
@@ -450,12 +451,11 @@ h1 span {
 }
 .carroussel .card {
   height: 100%;
-  width: calc(100% / 3 - (40px / 3));
-  flex-shrink: 0;
+  width: calc(100% / 2 + (60px / 2));
   position: relative;
 }
 .divertir {
-  width: calc(100% / 4);
+  width: 20%;
   height: 100%;
   padding-right: 30px;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -518,18 +518,22 @@ h1 span {
 .guide {
   display: flex;
   justify-content: space-between;
-  height: 530px;
+  /* height: 530px; */
   margin-bottom: 35px;
 }
 .guide .card {
-  width: 400px;
-  height: 100%;
+  /* width: 400px; */
+  width: calc(100% / 3 - (30px / 3));
+  /* height: 100%; */
   background: var(--jaune);
   position: relative;
+
+  margin-right: 10px;
 }
 .guide .picture {
   height: 230px;
-  width: 100%;
+  object-fit: contain;
+  /* width: 100%; */
 }
 .guide img {
   width: 100%;
@@ -570,7 +574,7 @@ h1 span {
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
-  top: 43%;
+  top: 41%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -586,20 +590,22 @@ h1 span {
 }
 .forum {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-bottom: 80px;
+  flex-wrap: wrap;
+  display: flex;
 }
 .forum > div {
   background-color: var(--jaune);
-  width: 420px;
+  /* width: 420px; */
+  /* width: calc(100% / 3 - (15px / 3)); */
+
   color: var(--black);
-  height: 135px;
+  /* height: 135px; */
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin: 0 20px;
-  padding: 0 20px;
+
+  margin: 10px;
+  padding: 10px 20px;
 }
 .forum .comments {
   display: flex;
@@ -613,6 +619,7 @@ h1 span {
 }
 .forum h4 {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 /* FOOTER */
 footer {
@@ -621,7 +628,9 @@ footer {
 footer > .container {
   display: flex;
   align-content: center;
-  height: 155px;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  /* height: 155px; */
 }
 footer img {
   height: 40px;
@@ -697,8 +706,69 @@ footer .col-2 i {
 .block-xs {
   display: none;
 }
+
+/* MODAL */
+#modal {
+  background-color: rgb(51, 51, 51, 0.5);
+  height: 100vh;
+  width: 100vw;
+  z-index: 99999;
+  position: absolute;
+  align-items: center;
+  justify-items: center;
+}
+#modal > div {
+  /* display: flex; */
+  margin: 0 auto;
+  /* align-items: center;
+  justify-content: space-evenly; */
+  background: var(--pink);
+  min-width: 25vw;
+  max-width: 45vw;
+  max-height: 80vh;
+  border-radius: 20px;
+  padding: 50px;
+  flex-direction: column;
+}
+#modal i {
+  float: right;
+  cursor: pointer;
+}
+#modal i:hover {
+  color: var(--noirClair);
+}
+#modal h4 {
+  color: var(--jaune);
+  margin-bottom: 20px;
+}
+#modal form {
+  display: flex;
+  flex-direction: column;
+}
+#modal form input,
+#modal form button,
+#modal form textarea {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+#modal input::placeholder,
+#modal form textarea {
+  font-family: "Trip Sans Reg";
+  color: var(--noirClair);
+}
+#modal button {
+  background: var(--green);
+  color: var(--jaune);
+}
+
 /* MEDIA QUERIES  */
-/* 1328px */
+
+/* ----------- */
+/*    1328px   */
+/* ----------- */
 @media (max-width: 1328px) {
   .navigation {
     flex-wrap: wrap;
@@ -723,8 +793,23 @@ footer .col-2 i {
     height: 284px;
   }
 }
+/* ----------- */
+/*    1080px   */
+/* ----------- */
+@media (max-width: 1250px) {
+  footer .col-1 {
+    width: 100%;
+    text-align: center;
+  }
+  footer .col-2 {
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+}
 
-/* 1024px */
+/* ----------- */
+/*    1024px   */
+/* ----------- */
 @media (max-width: 1024px) {
   .link button a {
     display: none;
@@ -779,19 +864,50 @@ footer .col-2 i {
   .section-conseil > div > div:not(:last-child) {
     margin-right: 0px;
   }
-  /* section immanquable */
-  .immanquable {
-    display: flex;
-  }
-  .carroussel .card {
-    width: calc(100% / 2.5 - (40px / 2));
-  }
+
+  /* .carroussel .card {
+    width: calc(100% / 2.5 + (55px / 2));
+  } */
   .carroussel {
-    width: calc(100% / 2.5 * 3);
+    width: 100%;
+  }
+  .point {
+    top: 40%;
   }
 }
 
-/* 768px */
+/* ----------- */
+/*    1120px    */
+/* ----------- */
+@media (max-width: 1120px) {
+  .point {
+    top: 43%;
+  }
+  .guide {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .guide .card {
+    width: calc(100% / 2 - (30px / 2));
+    display: block;
+  }
+  .guide .card:last-child {
+    margin: 15px auto;
+  }
+}
+
+/* ----------- */
+/*    960px    */
+/* ----------- */
+@media (max-width: 960px) {
+  .point {
+    top: 40%;
+  }
+}
+
+/* ----------- */
+/*    768px    */
+/* ----------- */
 @media (max-width: 768px) {
   /* header */
   nav .right {
@@ -846,19 +962,26 @@ footer .col-2 i {
     margin-left: 0;
     width: 100%;
     flex-direction: column;
-    max-height: 425px;
+    height: 425px;
   }
 
   .description .col-2 > div:first-child {
     width: 100%;
-    height: 65%;
+    border-radius: 20px 20px 0 0;
   }
   .description .col-2 > div:last-child {
     width: 100%;
-    height: 35%;
+    border-radius: 0 0 20px 20px;
   }
-
-  /* navigation carroussel */
+  /* section immanquable */
+  .immanquable {
+    display: block;
+  }
+  .divertir {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  /* header navigation carroussel */
   .gestionBtnNav {
     position: relative;
     margin-bottom: 20px;
@@ -917,61 +1040,14 @@ footer .col-2 i {
     justify-content: flex-start;
     padding-left: 30px;
   }
-}
 
-/* MODAL */
-#modal {
-  background-color: rgb(51, 51, 51, 0.5);
-  height: 100vh;
-  width: 100vw;
-  z-index: 99999;
-  position: absolute;
-  align-items: center;
-  justify-items: center;
-}
-#modal > div {
-  /* display: flex; */
-  margin: 0 auto;
-  /* align-items: center;
-  justify-content: space-evenly; */
-  background: var(--pink);
-  min-width: 25vw;
-  max-width: 45vw;
-  max-height: 80vh;
-  border-radius: 20px;
-  padding: 50px;
-  flex-direction: column;
-}
-#modal i {
-  float: right;
-  cursor: pointer;
-}
-#modal i:hover {
-  color: var(--noirClair);
-}
-#modal h4 {
-  color: var(--jaune);
-  margin-bottom: 20px;
-}
-#modal form {
-  display: flex;
-  flex-direction: column;
-}
-#modal form input,
-#modal form button,
-#modal form textarea {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-
-#modal input::placeholder,
-#modal form textarea {
-  font-family: "Trip Sans Reg";
-  color: var(--noirClair);
-}
-#modal button {
-  background: var(--green);
-  color: var(--jaune);
+  .guide {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .guide .card {
+    margin: 15px auto;
+    width: 90%;
+    display: block;
+  }
 }
