@@ -161,6 +161,7 @@ header {
   text-transform: none;
   color: var(--black);
   font-size: 16px;
+  margin-left: 5px;
 }
 
 .publish i,
