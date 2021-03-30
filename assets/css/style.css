@@ -57,6 +57,13 @@ h4 {
 .mb80 {
   margin-bottom: 80px;
 }
+.disabled {
+  color: blue;
+}
+#error {
+  text-align: center;
+  margin: 0 auto;
+}
 body {
   font-family: "Trip Sans Med";
   font-size: 16px;
@@ -708,7 +715,8 @@ footer .col-2 i {
 }
 
 /* MODAL */
-#modal {
+#modal,
+#modalSuccess {
   background-color: rgb(51, 51, 51, 0.5);
   height: 100vh;
   width: 100vw;
@@ -717,7 +725,8 @@ footer .col-2 i {
   align-items: center;
   justify-items: center;
 }
-#modal > div {
+#modal > div,
+#modalSuccess > div {
   /* display: flex; */
   margin: 0 auto;
   /* align-items: center;
@@ -730,14 +739,17 @@ footer .col-2 i {
   padding: 50px;
   flex-direction: column;
 }
-#modal i {
+#modal i,
+#modalSuccess i {
   float: right;
   cursor: pointer;
 }
-#modal i:hover {
+#modal i:hover,
+#modalSuccess i:hover {
   color: var(--noirClair);
 }
-#modal h4 {
+#modal h4,
+#modalSuccess h4 {
   color: var(--jaune);
   margin-bottom: 20px;
 }

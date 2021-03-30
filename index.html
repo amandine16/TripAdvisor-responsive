@@ -20,8 +20,19 @@
       type="image/png"
       href="./assets/img/Tripadvisor_logoset_solid_green.svg"
     />
+    <!-- loader -->
+    <link
+      rel="stylesheet"
+      href="./assets//css/css-loader-master/dist/css-loader.css"
+    />
   </head>
   <body>
+    <div id="modalSuccess" class="hidden">
+      <div>
+        <i class="fas fa-times closeSuccess"></i>
+        <h4>Message envoyé avec succès</h4>
+      </div>
+    </div>
     <div id="modal" class="hidden">
       <div>
         <i class="fas fa-times close"></i>
@@ -32,29 +43,33 @@
             type="text"
             name="firstname"
             id="firstname"
-            value="amandine"
+            value=""
             placeholder="John"
+            onchange="hideError()"
           /><br />
           <input
             type="text"
             name="lastname"
             id="lastname"
-            value="delavoie"
+            value=""
             placeholder="Doe"
+            onchange="hideError()"
           /><br />
           <input
             type="email"
             name="email"
             id="email"
-            value="john.doe@gmail.com"
+            value=""
             placeholder="john.doe@gmail.com"
+            onchange="hideError()"
           /><br />
           <input
             type="text"
             name="subject"
             id="subject"
-            value="le sujet"
-            placeholder="De quoi voulez-vous me parler ?"
+            value=""
+            placeholder="Sujet du message"
+            onchange="hideError()"
           /><br />
           <textarea
             name="message"
@@ -62,10 +77,16 @@
             cols="30"
             rows="10"
             placeholder="Écrivez votre message ici..."
-          >
-Ceci est un message par défaut</textarea
+            onchange="hideError()"
+          ></textarea
           ><br />
-          <button type="submit">Envoyer le message</button>
+          <!-- loader qui apparait lors de l'analyse de la requête -->
+          <div
+            class="loader loader-default"
+            data-text="Email en cours d'envoie"
+          ></div>
+          <button id="btn-sumit" type="submit">Envoyer le message</button>
+          <span id="error" class="hidden">Erreur</span>
         </form>
       </div>
     </div>
@@ -576,5 +597,12 @@ Ceci est un message par défaut</textarea
         </div>
       </div>
     </footer>
+    <script>
+      function hideError() {
+        const error = $.getElementById("error");
+        error.classList.add("hidden");
+        error.classList.remove("display");
+      }
+    </script>
   </body>
 </html>
