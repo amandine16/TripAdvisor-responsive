@@ -16,6 +16,16 @@
   margin: 0;
   padding: 0;
 }
+.favoris {
+  background-color: var(--pink) !important;
+}
+.favoris svg {
+  fill: white;
+  color: white;
+}
+button {
+  outline: none;
+}
 .d-flex {
   display: flex;
 }
@@ -103,6 +113,9 @@ header {
 }
 .search input {
   border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px;
 }
 .search button {
   border: none;
@@ -153,12 +166,9 @@ header {
 .publish i,
 .alertes i,
 .voyages i {
-  margin-right: 5px;
   font-size: 20px;
 }
 .i {
-  margin-right: 5px;
-
   width: 20px;
 }
 .alertes .publish,

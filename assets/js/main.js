@@ -8,6 +8,12 @@ $.addEventListener("DOMContentLoaded", () => {
   const message = $.getElementById("message");
   const error = $.getElementById("error");
 
+  // Favoris
+  $.querySelector("#btnFavoris").addEventListener("click", () => {
+    console.log("click");
+    $.querySelector("#btnFavoris").classList.toggle("favoris");
+  });
+
   // Modal succès
   $.querySelector(".closeSuccess").addEventListener("click", () => {
     $.querySelector("#modalSuccess").classList.remove("display");
