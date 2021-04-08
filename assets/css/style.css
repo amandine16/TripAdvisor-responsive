@@ -935,6 +935,12 @@ footer .col-2 i {
   }
 }
 
+@media (min-width: 768px) {
+  .displayBtnCar {
+    display: none;
+  }
+}
+
 /* ----------- */
 /*    768px    */
 /* ----------- */
