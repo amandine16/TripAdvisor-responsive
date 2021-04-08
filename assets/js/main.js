@@ -9,34 +9,48 @@ $.addEventListener("DOMContentLoaded", () => {
   const error = $.getElementById("error");
 
   // Favoris
-  $.querySelector("#btnFavoris").addEventListener("click", () => {
+  $.querySelector(".btnFavoris").addEventListener("click", () => {
     console.log("click");
-    $.querySelector("#btnFavoris").classList.toggle("favoris");
+    $.querySelector(".btnFavoris").classList.toggle("favoris");
   });
 
-  // Modal succès
+  // Fermeture Modal succès
   $.querySelector(".closeSuccess").addEventListener("click", () => {
+    // Remet le scroll lorsque la modale envoie d'email + succes se ferme
+    document.documentElement.style.overflow = "scroll";
     $.querySelector("#modalSuccess").classList.remove("display");
   });
 
   //Détection du click sur "envoie d'un email"
   $.querySelector("#btn-connect").addEventListener("click", () => {
     $.querySelector("#modal").classList.toggle("display");
+    // Bloque le scroll lorsque la modale envoie d'email + succes est ouverte
+    document.documentElement.style.overflow = "hidden";
     // Erreur
     error.classList.add("hidden");
     error.classList.remove("display");
   });
   $.querySelector(".close").addEventListener("click", () => {
+    document.documentElement.style.overflow = "scroll";
     $.querySelector("#modal").classList.remove("display");
   });
   $.querySelector(".navigation").addEventListener("scroll", (e) => {
     let x = $.querySelector(".navigation").scrollLeft;
+    $.querySelector(".btnCarRight").scrollLeft = 50;
     console.log(x);
     if (x > 20) {
       $.querySelector(".btnCarLeft").classList.add("displayBtnCar");
     } else {
       $.querySelector(".btnCarLeft").classList.remove("displayBtnCar");
     }
+  });
+
+  // Scoll navigation on click btn
+  $.querySelector(".btnCarRight").addEventListener("click", () => {
+    $.querySelector(".navigation").scrollLeft += 200;
+  });
+  $.querySelector(".btnCarLeft").addEventListener("click", () => {
+    $.querySelector(".navigation").scrollLeft -= 200;
   });
 
   let isLoading = false;

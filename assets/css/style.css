@@ -9,6 +9,8 @@
   --grisClair: #e0e0e0;
   --scrimPrimaryBackgroundEnd: hsla(0, 0%, 100%, 0);
   --scrimPrimaryBackgroundStart: #fff;
+  /* Text responsive */
+  --res: calc(0.01 * 10vmin);
 }
 
 * {
@@ -33,7 +35,8 @@ button {
   justify-content: space-between;
 }
 h1 {
-  font-size: 3.5vw;
+  /* Text responsive */
+  font-size: calc(45 * var(--res));
   line-height: 30px;
   font-weight: bold;
   color: var(--pink);
@@ -73,6 +76,8 @@ h4 {
 #error {
   text-align: center;
   margin: 0 auto;
+  color: white;
+  font-size: 13px;
 }
 body {
   font-family: "Trip Sans Med";
@@ -775,6 +780,7 @@ footer .col-2 i {
   border: none;
   border-radius: 5px;
   outline: none;
+  font-family: "Trip Sans Reg";
 }
 
 #modal input::placeholder,
@@ -785,6 +791,7 @@ footer .col-2 i {
 #modal button {
   background: var(--green);
   color: var(--jaune);
+  font-size: "Trip Sans Reg";
 }
 
 /* MEDIA QUERIES  */
@@ -979,7 +986,8 @@ footer .col-2 i {
   }
   .description .col-1 {
     width: 100%;
-    margin-bottom: 30px;
+    /* margin: 15px; */
+    padding: 15px 20px 0px 20px;
   }
   .description .col-2 {
     margin-left: 0;
@@ -1072,5 +1080,9 @@ footer .col-2 i {
     margin: 15px auto;
     width: 90%;
     display: block;
+  }
+  .links {
+    display: none;
+    /* margin: 30px 0; */
   }
 }
